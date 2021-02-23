@@ -2,7 +2,7 @@
 
 This repo contains demo code for the following paper:
 
-> Qinqing Zheng, Shuxiao Chen, Qi Long, Weijie J. Su.  *Federated f-Differential Privacy*. AISTATS 2021.
+> Qinqing Zheng, Shuxiao Chen, Qi Long, Weijie J. Su.  *Federated f-Differential Privacy*. AISTATS 2021. [[arXiv:2102.11158](https://arxiv.org/abs/2102.11158)]
 
 
 ### Abstract
