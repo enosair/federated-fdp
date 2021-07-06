@@ -1,25 +1,16 @@
-from torch.utils.data import Sampler
 import torch
-import numpy as np
+from torch.utils.data import Sampler
 
 
 class UniformSampler(Sampler):
-    def __init__(self, data_source, batch_size):
-        self.data_source = data_source
-        self._num_samples = len(data_source)
+    def __init__(self, batch_size, niter, data_size):
         self._batch_size = batch_size
-
-    @property
-    def num_samples(self):
-        return self._num_samples
-
-    def __len__(self):
-        return self.num_samples
+        self._niter = niter
+        self._data_size = data_size
 
     def __iter__(self):
-        n = len(self.data_source)
-        niter = int(np.ceil(n / self._batch_size))
+        n = self._data_size
         ret = []
-        for ii in range(niter):
+        for ii in range(self._niter):
             ret.extend(torch.randperm(n)[: self._batch_size])
         return iter(ret)
